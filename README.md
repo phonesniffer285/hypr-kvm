@@ -29,7 +29,7 @@ WiFi support coming soon!
 sudo pacman -S ydotool
 
 # Install scrcpy and adb
-sudo pacman -S scrcpy android-tools
+sudo pacman -S scrcpy
 
 # For other distros, use your package manager
 # (apt, dnf, brew, etc.)
