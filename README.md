@@ -1,14 +1,62 @@
 # hypr-kvm
-an scrcpy fork to input share on hyprland with seamless switching
-i recently switched to omarchy but when i looked for input sharing solutions i couldnt find any as hyprland is strict with its input being logged so i made my own by forking scrcpy 
 
-it supports input switching by moving mouse to edge of the screen and back by using rctrl
-it presently does that over ethernet it dynamically detects ip and also routes audio to pc from phone
-ethernet minimises latency but ill be adding wifi support soon
+An scrcpy fork to input share on Hyprland with seamless switching.
 
-(use ethernet tethering from your phone for simpler ip assigmnment and run the script)
+## About
 
+I recently switched to Arch Linux with Hyprland, but couldn't find any input sharing solutions. Hyprland is strict with input logging, so I created my own by forking scrcpy to enable seamless keyboard and mouse sharing between your PC and phone.
 
+## Features
 
-update to v2
-made the rctrl switch more robust by imrpoving detection of when the cursor returns to the desktop
+- **Seamless Input Switching**: Move your mouse to the edge of the screen and back using `Ctrl+Right Alt` to switch between your PC and phone
+- **Ethernet Support**: Dynamically detects IP and establishes connection over Ethernet (minimizes latency)
+- **Audio Routing**: Routes audio from your phone to your PC
+- **Hyprland Integration**: Works seamlessly with Hyprland's input system
+
+WiFi support coming soon!
+
+## Requirements
+
+- **ydotool** - For sending keyboard and mouse inputs
+- **scrcpy** - For screen sharing (or this fork)
+- **adb** - Android Debug Bridge for device communication
+- **Python 3.x** - For running the scripts
+
+### Installation
+
+```bash
+# Install ydotool (Arch)
+sudo pacman -S ydotool
+
+# Install scrcpy and adb
+sudo pacman -S scrcpy android-tools
+
+# For other distros, use your package manager
+# (apt, dnf, brew, etc.)
+```
+
+## Setup & Usage
+
+1. **Enable USB Debugging** on your Android device (Settings > About > Build Number > tap 7 times > Developer Options > USB Debugging)
+2. **Connect via Ethernet**: Set up Ethernet tethering on your phone
+3. **Run the script**:
+   ```bash
+   python hypr-kvm.py
+   ```
+
+The script will automatically detect your phone's IP and establish the connection.
+
+## Controls
+
+- **Ctrl+Right Alt**: Toggle between PC and phone input
+- Move your mouse to the screen edge to switch control
+
+## Changelog
+
+### v2
+- Improved `Ctrl+Right Alt` switch robustness
+- Better detection of cursor return to desktop
+
+## License
+
+This is a fork of [scrcpy](https://github.com/Genymobile/scrcpy).
