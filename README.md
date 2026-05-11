@@ -54,7 +54,7 @@ The script will automatically detect your phone's IP and establish the connectio
 ## Changelog
 
 ### v2
-- Improved `Ctrl+Right Alt` switch robustness
+- Improved `rctrl` switch robustness
 - Better detection of cursor return to desktop
 
 ## License
