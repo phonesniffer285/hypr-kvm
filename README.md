@@ -7,3 +7,8 @@ it presently does that over ethernet it dynamically detects ip and also routes a
 ethernet minimises latency but ill be adding wifi support soon
 
 (use ethernet tethering from your phone for simpler ip assigmnment and run the script)
+
+
+
+update to v2
+made the rctrl switch more robust by imrpoving detection of when the cursor returns to the desktop
